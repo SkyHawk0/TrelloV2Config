@@ -6,6 +6,11 @@ keystore:
 spring:
   application:
     name: auth-service
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://18.217.130.9:8761/eureka/
 
   datasource:
    tomcat:
