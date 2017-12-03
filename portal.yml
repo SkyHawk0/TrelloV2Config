@@ -4,26 +4,23 @@ spring:
   datasource:
    tomcat:
      initial-size: 2   
-#cloud:
-#   config:
-#     uri: http://localhost:8888
 security:
  oauth2:
    resource:
-     accessTokenUri: http://localhost:8090/oauth/check_token
-     userAuthorizationUri: http://localhost:8090/oauth/authorize
-     userInfoUri: http://localhost:8090/user
+     accessTokenUri: http://${DOCKER_HOST_IP}:8090/oauth/check_token
+     userAuthorizationUri: http://${DOCKER_HOST_IP}:8090/oauth/authorize
+     userInfoUri: http://${DOCKER_HOST_IP}:8090/user
      jwt:
-       keyUri: http://localhost:8090/oauth/token_key
-      
+       keyUri: http://${DOCKER_HOST_IP}:8090/oauth/token_key
 server:
-  port: 8001
+ port: 8003
+      
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: ${DOCKER_HOST_IP}:8761/eureka/
+      defaultZone: http://${DOCKER_HOST_IP}:8761/eureka/
   instance:
     instanceId: ${spring.application.name}
     hostname: ${DOCKER_HOST_IP}:${server.port}
