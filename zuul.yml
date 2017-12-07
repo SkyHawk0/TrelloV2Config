@@ -6,10 +6,11 @@ spring:
      initial-size: 2
 hystrix:
   command:
-   default:
-     execution:
-       timeout:
-         enabled: false  
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000 
 server:
     port: 8765
 
