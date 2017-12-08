@@ -6,6 +6,8 @@ keystore:
 spring:
   application:
     name: auth-service
+  mvc:
+    dispatchOptionsRequest: true
     
 eureka:
   client:
