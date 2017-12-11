@@ -3,24 +3,24 @@ spring:
     name: profile
   datasource:
    tomcat:
-     initial-size: 2
-cloud:
-   config:
-     uri: http://localhost:8888
+     initial-size: 2   
 security:
  oauth2:
    resource:
-     accessTokenUri: http://localhost:8090/oauth/check_token
-     userAuthorizationUri: http://localhost:8090/oauth/authorize
-     userInfoUri: http://localhost:8090/user
+     accessTokenUri: http://18.217.187.31:8090/oauth/check_token
+     userAuthorizationUri: http://18.217.187.31:8090/oauth/authorize
+     userInfoUri: http://18.217.187.31:8090/user
      jwt:
-       keyUri: http://localhost:8090/oauth/token_key
+       keyUri: http://18.217.187.31:8090/oauth/token_key
 server:
- port: 0
-        
+ port: 8004
+      
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://18.217.130.9:8761/eureka/  
+      defaultZone: http://18.217.187.31:8761/eureka/
+  instance:
+    instanceId: portal
+    hostname: 18.217.187.31:8004
