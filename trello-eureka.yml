@@ -4,9 +4,7 @@ server:
 spring:
   application:
     name: trello-eureka
-    datasource:
-    tomcat:
-      initial-size: 2
+
       
 eureka:
   client:
