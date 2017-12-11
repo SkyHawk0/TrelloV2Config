@@ -13,7 +13,7 @@ security:
      jwt:
        keyUri: http://18.217.187.31:8090/oauth/token_key
 server:
- port: 8006
+ port: 8003
       
 eureka:
   client:
