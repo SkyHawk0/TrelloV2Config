@@ -43,11 +43,7 @@ zuul:
    board-updateEndpoint:
      path: /board-update/**
      sensitiveHeaders:
-     serviceId: board-update
-   ticketEndpoint:
-     path: /ticket/**
-     sensitiveHeaders:
-     serviceId: ticket  
+     serviceId: board-update 
       
 
 eureka:
